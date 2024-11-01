@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+<div class="main">
+    {% if cotegorys.count > 0 %}
+    {% for  cotegory in  cotegorys %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{cotegory.id}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{cotegory.cotegory_name}}</li>
+      </ul>
+      <div class="card-body">
+        <a href="{% url 'detailcotegory' cotegory.id %}" class="card-link">Detail</a>
+
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock content %}

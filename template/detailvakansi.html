@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+<div class="main">
+    <div class="card" style="width: 18rem;">
+        <img src="{{vakan.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{vakan.title}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{vakan.discraption}}</li>
+          <li class="list-group-item">{{vakan.time_work}}{{vakan.time_notwork}}</li>
+          <li class="list-group-item">{{vakan.salary}}</li>
+          <li class="list-group-item">{{vakan.cotegory}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="{% url 'updatevakansi' vakan.id %}" class="card-link">Update</a>
+          <a href="{% url 'deletevakansi' vakan.id %}" class="card-link">Delete</a>
+        </div>
+      </div>
+</div>
+
+{% endblock content %}

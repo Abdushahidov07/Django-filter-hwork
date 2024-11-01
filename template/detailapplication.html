@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+<div class="main">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{application.l_name}} {{application.f_name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{application.emal}}</li>
+      <li class="list-group-item">{{application.vakansi}}</li>
+      <li class="list-group-item">{{application.discraptions}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="{{application.resume.url}}" class="card-link">Resume</a>
+      <a href="{% url 'updateapplication' application.id %}" class="card-link">Update</a>
+      <a href="{% url 'deleteapplication' application.id %}" class="card-link">Delete</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

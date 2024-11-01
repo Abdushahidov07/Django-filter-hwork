@@ -1,0 +1,3 @@
+wmic memorychip get speed
+
+winsat mem

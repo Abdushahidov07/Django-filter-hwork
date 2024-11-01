@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Delete{% endblock title %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+{% block content %}
+<h1>Do you want delete him ?{{odject_list.cotegory_name}}</h1>
+<form method="post", enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">Yes</button>
+</form>
+<a href="{% url 'showcotegory' %}"><button>No</button></a>
+{% endblock content %}
