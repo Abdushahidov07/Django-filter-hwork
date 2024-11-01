@@ -50,7 +50,7 @@ class DetailCotegory(DetailView):
     model = Cotegory 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["vakansi"] = Vakaansi.objects.filter(id=self.kwargs['pk'])
+        context["vakansi"] = Vakaansi.objects.filter(cotegory=self.kwargs['pk'])
         return context
     
     context_object_name = "cotegory"
@@ -86,10 +86,10 @@ class ShowApplication(ListView):
 class DetailApplication(DetailView):
     template_name = "detailapplication.html"
     model = Application 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["vakansi"] = Vakaansi.objects.filter(id=self.kwargs['pk'])
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context["vakansi"] = Vakaansi.objects.filter(id=self.kwargs['pk'])
+    #     return context
     
     context_object_name = "application"
 
